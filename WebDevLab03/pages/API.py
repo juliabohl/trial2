@@ -80,7 +80,7 @@ selected_team = st.selectbox("Choose an ACC Team:", acc_teams)
 season = st.slider("Select Season", 2018, 2025, 2024)
 
 if selected_team in team_images:
-    st.image(team_images[selected_team], width=250, caption=selected_team)
+    st.image(team_images[selected_team], width=300, caption=selected_team)
 
 @st.cache_data
 def get_team_stats(team, year):
@@ -140,6 +140,7 @@ if not player_df.empty:
     else:
         st.warning("No player data found for this selection")
     
+
 
 
 
