@@ -49,30 +49,31 @@ acc_teams = ["Boston College", "UC Berkeley", "Clemson", "Duke", "Florida State"
              "Georgia Tech", "Louisville", "University of Miami", "NC State", "Notre Dame",
              "University of Pittsburgh", "SMU", "Stanford", "Syracuse", "UNC", "UVA",
              "Virginia Tech", "Wake Forest"]
-team_images = {
-    "Boston College": "../images/bostoncollege.jpg",
-    "UC Berkeley": "../images/cal.jpg",
-    "Clemson": "../images/clemson.jpg",
-    "Duke": "../images/duke.jpg",
-    "Florida State": "../images/fsu.jpg",
-    "Georgia Tech": "../images/gt.jpg",
-    "Louisville": "../images/louisvilles.jpg",
-    "University of Miami": "../images/miami.jpg",
-    "NC State": "../images/ncstate.jpg",
-    "Notre Dame": "../images/notredame.jpg",
-    "University of Pittsburgh": "../images/pitt.jpg",
-    "SMU": "../images/smu.jpg",
-    "Stanford": "../images/standford.jpg",
-    "Syracuse": "../images/syracuse.jpg",
-    "UNC": "../images/unc.jpg",
-    "UVA": "../images/uva.jpg",
-    "Virginia Tech": "../images/vt.jpg",
-    "Wake Forest": "../images/wakeforest.jpg"}
-
-
 import os
-st.subheader("DEBUG - Files in images folder:")
-st.write("Files in images folder:", os.listdir("WebDevLab03/images"))
+
+IMAGE_DIR = os.path.join("WebDevLab03", "images")
+
+team_images = {
+    "Boston College": os.path.join(IMAGE_DIR, "bostoncollege.jpg"),
+    "UC Berkeley": os.path.join(IMAGE_DIR, "cal.jpg"),
+    "Clemson": os.path.join(IMAGE_DIR, "clemson.jpg"),
+    "Duke": os.path.join(IMAGE_DIR, "duke.jpg"),
+    "Florida State": os.path.join(IMAGE_DIR, "fsu.jpg"),
+    "Georgia Tech": os.path.join(IMAGE_DIR, "gt.jpg"),
+    "Louisville": os.path.join(IMAGE_DIR, "louisvilles.jpg"),
+    "University of Miami": os.path.join(IMAGE_DIR, "miami.jpg"),
+    "NC State": os.path.join(IMAGE_DIR, "ncstate.jpg"),
+    "Notre Dame": os.path.join(IMAGE_DIR, "notredame.jpg"),
+    "University of Pittsburgh": os.path.join(IMAGE_DIR, "pitt.jpg"),
+    "SMU": os.path.join(IMAGE_DIR, "smu.jpg"),
+    "Stanford": os.path.join(IMAGE_DIR, "standford.jpg"),
+    "Syracuse": os.path.join(IMAGE_DIR, "syracuse.jpg"),
+    "UNC": os.path.join(IMAGE_DIR, "unc.jpg"),
+    "UVA": os.path.join(IMAGE_DIR, "uva.jpg"),
+    "Virginia Tech": os.path.join(IMAGE_DIR, "vt.jpg"),
+    "Wake Forest": os.path.join(IMAGE_DIR, "wakeforest.jpg"),
+}
+
 
 selected_team = st.selectbox("Choose an ACC Team:", acc_teams)
 season = st.slider("Select Season", 2018, 2025, 2024)
@@ -138,6 +139,7 @@ if not player_df.empty:
     else:
         st.warning("No player data found for this selection")
     
+
 
 
 
