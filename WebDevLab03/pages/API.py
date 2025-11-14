@@ -49,16 +49,25 @@ acc_teams = ["Boston College", "UC Berkeley", "Clemson", "Duke", "Florida State"
              "Georgia Tech", "Louisville", "University of Miami", "NC State", "Notre Dame",
              "University of Pittsburgh", "SMU", "Stanford", "Syracuse", "UNC", "UVA",
              "Virginia Tech", "Wake Forest"]
-
-#team_images = {"Boston College": "WebDevLab03/images/bostoncollege.jpg", "UC Berkeley": "WebDevLab03/images/cal.jpg",
-               "Clemson": "WebDevLab03/images/clemson.jpg", "Duke": "WebDevLab03/images/duke.jpg",
-               "Florida State": "WebDevLab03/images/fsu.jpg", "Georgia Tech": "WebDevLab03/images/gt.jpg",
-               "Louisville": "WebDevLab03/images/louisville.jpg", "University of Miami": "WebDevLab03/images/miami.jpg",
-               "NC State": "WebDevLab03/images/ncstate.jpg", "Notre Dame": "WebDevLab03/images/notredame.jpg",
-               "University of Pittsburgh": "WebDevLab03/images/pitt.jpg", "SMU": "WebDevLab03/images/smu.jpg",
-               "Stanford": "WebDevLab03/images/standford.jpg", "Syracuse": "WebDevLab03/images/syracuse.jpg",
-               "UNC": "WebDevLab03/images/unc.jpg", "UVA": "WebDevLab03/images/uva.jpg", "Virginia Tech": "WebDevLab03/images/vt.jpg",
-               "Wake Forest": "WebDevLab03/images/wakeforest.jpg"}
+team_images = {
+    "Boston College": "../images/bostoncollege.jpg",
+    "UC Berkeley": "../images/cal.jpg",
+    "Clemson": "../images/clemson.jpg",
+    "Duke": "../images/duke.jpg",
+    "Florida State": "../images/fsu.jpg",
+    "Georgia Tech": "../images/gt.jpg",
+    "Louisville": "../images/louisvilles.jpg",
+    "University of Miami": "../images/miami.jpg",
+    "NC State": "../images/ncstate.jpg",
+    "Notre Dame": "../images/notredame.jpg",
+    "University of Pittsburgh": "../images/pitt.jpg",
+    "SMU": "../images/smu.jpg",
+    "Stanford": "../images/standford.jpg",
+    "Syracuse": "../images/syracuse.jpg",
+    "UNC": "../images/unc.jpg",
+    "UVA": "../images/uva.jpg",
+    "Virginia Tech": "../images/vt.jpg",
+    "Wake Forest": "../images/wakeforest.jpg"}
 
 
 import os
@@ -67,10 +76,9 @@ st.write("Files in images folder:", os.listdir("WebDevLab03/images"))
 
 selected_team = st.selectbox("Choose an ACC Team:", acc_teams)
 season = st.slider("Select Season", 2018, 2025, 2024)
-st.image(r"C:\Users\jb100\OneDrive\Documents\WebDevLab03\images\bostoncollege.jpg", width=250, caption=selected_team)
 
-#if selected_team in team_images:
-   # st.image(team_images[selected_team], width=250, caption=selected_team)
+if selected_team in team_images:
+    st.image(team_images[selected_team], width=250, caption=selected_team)
 
 @st.cache_data
 def get_team_stats(team, year):
@@ -130,6 +138,7 @@ if not player_df.empty:
     else:
         st.warning("No player data found for this selection")
     
+
 
 
 
