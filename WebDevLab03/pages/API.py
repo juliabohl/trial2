@@ -50,7 +50,7 @@ acc_teams = ["Boston College", "UC Berkeley", "Clemson", "Duke", "Florida State"
              "University of Pittsburgh", "SMU", "Stanford", "Syracuse", "UNC", "UVA",
              "Virginia Tech", "Wake Forest"]
 
-team_images = {"Boston College": "WebDevLab03/images/bostoncollege.jpg", "UC Berkeley": "WebDevLab03/images/cal.jpg",
+#team_images = {"Boston College": "WebDevLab03/images/bostoncollege.jpg", "UC Berkeley": "WebDevLab03/images/cal.jpg",
                "Clemson": "WebDevLab03/images/clemson.jpg", "Duke": "WebDevLab03/images/duke.jpg",
                "Florida State": "WebDevLab03/images/fsu.jpg", "Georgia Tech": "WebDevLab03/images/gt.jpg",
                "Louisville": "WebDevLab03/images/louisville.jpg", "University of Miami": "WebDevLab03/images/miami.jpg",
@@ -67,9 +67,10 @@ st.write("Files in images folder:", os.listdir("WebDevLab03/images"))
 
 selected_team = st.selectbox("Choose an ACC Team:", acc_teams)
 season = st.slider("Select Season", 2018, 2025, 2024)
+st.image(r"C:\Users\jb100\OneDrive\Documents\WebDevLab03\images\bostoncollege.jpg", width=250, caption=selected_team)
 
-if selected_team in team_images:
-    st.image(team_images[selected_team], width=250, caption=selected_team)
+#if selected_team in team_images:
+   # st.image(team_images[selected_team], width=250, caption=selected_team)
 
 @st.cache_data
 def get_team_stats(team, year):
@@ -129,6 +130,7 @@ if not player_df.empty:
     else:
         st.warning("No player data found for this selection")
     
+
 
 
 
