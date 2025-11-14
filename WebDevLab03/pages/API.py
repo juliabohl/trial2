@@ -50,15 +50,15 @@ acc_teams = ["Boston College", "UC Berkeley", "Clemson", "Duke", "Florida State"
              "University of Pittsburgh", "SMU", "Stanford", "Syracuse", "UNC", "UVA",
              "Virginia Tech", "Wake Forest"]
 
-team_images = {"Boston College": "images/bostoncollege.JPG", "UC Berkeley": "images/cal.JPG",
-               "Clemson": "images/clemson.JPG", "Duke": "images/duke.JPG",
-               "Florida State": "images/fsu.JPG", "Georgia Tech": "images/gt.JPG",
-               "Louisville": "images/louisville.JPG", "University of Miami": "images/miami.JPG",
-               "NC State": "images/ncstate.JPG", "Notre Dame": "images/notredame.JPG",
-               "University of Pittsburgh": "images/pitt.JPG", "SMU": "images/smu.JPG",
-               "Stanford": "images/standford.JPG", "Syracuse": "images/syracuse.JPG",
-               "UNC": "images/unc.JPG", "UVA": "images/uva.JPG", "Virginia Tech": "images/vt.JPG",
-               "Wake Forest": "images/wakeforest.JPG"}
+team_images = {"Boston College": "images/bostoncollege.jpg", "UC Berkeley": "images/cal.jpg",
+               "Clemson": "images/clemson.jpg", "Duke": "images/duke.jpg",
+               "Florida State": "images/fsu.jpg", "Georgia Tech": "images/gt.jpg",
+               "Louisville": "images/louisville.jpg", "University of Miami": "images/miami.jpg",
+               "NC State": "images/ncstate.jpg", "Notre Dame": "images/notredame.jpg",
+               "University of Pittsburgh": "images/pitt.jpg", "SMU": "images/smu.jpg",
+               "Stanford": "images/standford.jpg", "Syracuse": "images/syracuse.jpg",
+               "UNC": "images/unc.jpg", "UVA": "images/uva.jpg", "Virginia Tech": "images/vt.jpg",
+               "Wake Forest": "images/wakeforest.jpg"}
 
 import os
 
@@ -132,3 +132,4 @@ if not player_df.empty:
     else:
         st.warning("No player data found for this selection")
     
+
