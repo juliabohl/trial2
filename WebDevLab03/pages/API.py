@@ -2,6 +2,7 @@ import requests
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import os
 
 st.set_page_config(page_title="College Football Analysis", page_icon="📊")
 st.title("College Football Analysis")
@@ -139,6 +140,7 @@ if not player_df.empty:
     else:
         st.warning("No player data found for this selection")
     
+
 
 
 
