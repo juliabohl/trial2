@@ -62,12 +62,8 @@ team_images = {"Boston College": "WebDevLab03/images/bostoncollege.jpg", "UC Ber
 
 
 import os
-
 st.subheader("DEBUG - Files in images folder:")
-try:
-    st.write(os.listdir("images"))
-except Exception as e:
-    st.error(f"Could not read images folder: {e}")
+st.write("Files in images folder:", os.listdir("WebDevLab03/images"))
 
 selected_team = st.selectbox("Choose an ACC Team:", acc_teams)
 season = st.slider("Select Season", 2018, 2025, 2024)
@@ -133,5 +129,6 @@ if not player_df.empty:
     else:
         st.warning("No player data found for this selection")
     
+
 
 
