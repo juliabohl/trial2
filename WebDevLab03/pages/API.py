@@ -103,14 +103,20 @@ def get_team_stats(team, year):
         
 
 data = get_team_stats(selected_team, season)
-
 if data:
-    #df = pd.DataFrame(data)
+    df = pd.DataFrame(data)
     df = df[["statName", "statValue"]]
-    df.rename(columns = {"statName": "Stat", "statValue": "Value"}, inplace=True)
+    df.rename(columns={"statName": "Stat", "statValue": "Value"}, inplace=True)
+
     st.subheader(f"{selected_team} Team Stats ({season})")
-    st.dataframe(df)
-    fig = px.bar(df, x="Stat", y="Value", title=f"{selected_team} Team Statistics ({season})")
+    
+    show_table = st.checkbox("Show Stats Table")
+
+    if show_table:
+        st.dataframe(df)
+
+    fig = px.bar(df, x="Stat", y="Value",
+                 title=f"{selected_team} Team Statistics ({season})")
     st.plotly_chart(fig, use_container_width=True)
 
 
@@ -141,6 +147,7 @@ if not player_df.empty:
     else:
         st.warning("No player data found for this selection")
     
+
 
 
 
